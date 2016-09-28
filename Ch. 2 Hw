@@ -65,6 +65,10 @@
 2.1.12
    ShellSort.java is included in the same folder as this homework
    Uses a modified version of Algorithm 2.3 in the Algorithms book.
+   Array size of 100 returned an int value of 3 or 4
+   Array size of 1000 returned an int value of 8 or 9
+   Array size of 10000 returned an int value of 15, 16 or 17
+   The values returned were small constant compared to the size of the array.
    
 2.2.17
    MyLinkList.java is included in the same folder as this homework.         

@@ -1,0 +1,70 @@
+2.1.1
+   Selection Sort
+   i  min   0 1 2 3 4 5 6 7 8 9 10 11
+   ----------------------------------
+            E A S Y Q U E S T I O N
+   0   1    E|A|S Y Q U E S T I O N <- A gets seclected
+   1   1    a|E|S Y Q U E S T I O N <- Swaps with E and E gets selected
+   2   6    a e S Y Q U|E|S T I O N <- Stays in place, second E gets selected
+   3   9    a e e Y Q U S S T|I|O N <- Swaps with S, I gets selected
+   4   11   a e e i Q U S S T Y O|N|<- Swaps with Y, N gets selected
+   5   10   a e e i n U S S T Y|O|Q <- Swaps with Q, O gets selected
+   6   11   a e e i n o S S T Y U|Q|<- Swaps with U, Q gets selected
+   7   7    a e e i n o q|S|T Y U S <- Swaps with S, S gets selected
+   8   11   a e e i n o q s T Y U|S|<- Stays in place, second S gets selected
+   9   11   a e e i n o q s s Y U|T|<- Swaps with T, T gets selected
+   10  10   a e e i n o q s s t|U|Y <- Swaps with Y, U gets selected
+   11  11   a e e i n o q s s t u Y <- Stays in place, Y gets selected, and stays in place
+            
+            A E E I N O Q S S T U Y <- Sorted
+            
+2.1.5
+   Always false, condition j > 0 will always be true until j = 0
+                 the array will need to be empty for this condition
+                 to be met
+   Always false, condition a[j] < a[j-1] will be false if a 0 or a 1
+                 is returned. This will happen if the comparison between
+                 a[j] < a[j-1] like A < A will return 0 or A < B will return 1
+
+2.1.9
+   Shell Sort
+   h  i  j  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+   -------------------------------------------------------------
+            E A S Y S H E L L S  O  R  T  Q  U  E  S  T  I  O  N
+   13 13 13 e a s y s h e l l s  o  r  t |Q| u  e  s  t  i  o  n <- Q gets chosen, h = 13
+   13 14 14 e a s y s h e l l s  o  r  t  q |U| e  s  t  i  o  n <- No swap, U gets chosen
+   13 15  2 e a|E|y s h e l l s  o  r  t  q  u |S| s  t  i  o  n <- No swap, S and E chose, compared and swapped
+   13 16  3 e a e|S|s h e l l s  o  r  t  q  u  s |Y| t  i  o  n <- S and Y get chosen, compared and swapped
+   13 17 17 e a e s s h e l l s  o  r  t  q  u  s  y |T| i  o  n <- T gets chosen, no swap
+   13 18 18 e a e s s h e l l s  o  r  t  q  u  s  y  t |I| o  n <- I gets chosen, no swap
+   13 19 19 e a e s s h e l l s  o  r  t  q  u  s  y  t  i |O| n <- O gets chosen, no swap
+   13 20 20 e a e s s h e l l s  o  r  t  q  u  s  y  t  i  o |N|<- N gets chosen, no swap
+            E A E S S H E L L S  O  R  T  Q  U  S  Y  T  I  O  N <- "Sorted" shell sort will no go to h = 4
+   4  4  4  e a e s|S|h e l l s  o  r  t  q  u  s  y  t  i  o  n <- S gets chosen no swap, no swaps for i = 5,6 & j =5,6
+   4  7  3  e a e|L|s h e|S|l s  o  r  t  q  u  s  y  t  i  o  n <- S and L get chosen, compared, and swapped
+   4  8  4  e a e l|L|h e s|S|s  o  r  t  q  u  s  y  t  i  o  n <- S and L get chosen, compared, and swapped
+   4  9  9  e a e l l|H|e s s|S| o  r  t  q  u  s  y  t  i  o  n <- S and H get chosen, no swap H < S
+   4 10 10  e a e l l h|E|s s s |O| r  t  q  u  s  y  t  i  o  n <- O and E get chosen, no swap E < O
+   4 11  7  e a e l l h e|R|s s  o |S| t  q  u  s  y  t  i  o  n <- R and S get chosen, compared, and swapped
+   4 12 12  e a e l l h e r|S|s  o  s |T| q  u  s  y  t  i  o  n <- S and T get chosen, no swap
+   4 13  9  e a e l l h e r s|Q| o  s  t |S| u  s  y  t  i  o  n <- Q and S get chosen, compared, and swapped
+   4 14 14  e a e l l h e r s q |O| s  t  s |U| s  y  t  i  o  n <- O and U get chosen, no swap 
+   4 15 15  e a e l l h e r s q  o |S| t  s  u |S| y  t  i  o  n <- S and S get chosen, no swap
+   4 16 16  e a e l l h e r s q  o  s |T| s  u  s |Y| t  i  o  n <- T and Y get chosen, no swap
+   4 17 17  e a e l l h e r s q  o  s  t |S| u  s  y |T| i  o  n <- S and T get chosen, no swap 
+   4 18 10  e a e l l h e r s q |I| s  t  s |O| s  y  t |U| o  n <- U and I get chosen, compared and swap, then I and O compared and swapped
+   4 19  7  e a e l l h e|O|s q  i |R| t  s  o |S| y  t  u |S| n <- S-O chosen, swapped; S-O chosen, swapped; R-O compared, swapped
+   4 20  8  e a e l l h e o|N|q  i  r |S| s  o  s |T| t  u  s |Y|<- Y-N chosen, swapped; T-N swapped; S-N swapped
+            E A E L L H E O N Q  I  R  S  S  O  S  T  T  U  S  Y
+   Insertion Sort Then is used for when H = 1 causing the earlier sequence
+   of letters to be sorted. 2 letters get "chosen" compared and swapped, however
+   if there are more letters before it, that letter that gets swapped will "move" 
+   down the array until it finds it spot.
+            A E E E H I L L N O  O  Q  R  S  S  S  S  T  T  U  Y  
+            
+2.1.12
+   ShellSort.java is included in the same folder as this homework
+   Uses a modified version of Algorithm 2.3 in the Algorithms book.
+   
+2.2.17
+   MyLinkList.java is included in the same folder as this homework.         

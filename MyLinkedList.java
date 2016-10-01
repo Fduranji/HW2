@@ -24,12 +24,12 @@ class LinkList
    private Node first;
    
    public LinkList()
-   {
+   {//Creates empty node;
       first = null;
    }
    
    public boolean isEmpty()
-   {
+   {//Checks if LinkList is emtpy
       return (first == null);
    }
    
@@ -115,7 +115,7 @@ class LinkList
       }
       
       //This says, if a equals null return b, if false return a.
-      //c.next will then equal what returned, b or a. 
+      //c.next will then equal what is returned, b or a. 
       current.next = (a == null) ? b : a;
       return fakeHead.next;
    }
